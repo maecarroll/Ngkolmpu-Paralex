@@ -1,0 +1,284 @@
+{
+  "id": "",
+  "licenses": [
+    {
+      "name": "GPL-3.0",
+      "title": "GNU General Public License 3.0",
+      "path": "https://opensource.org/licenses/GPL-3.0"
+    }
+  ],
+  "profile": "data-package",
+  "title": "Ngkolmpu Verbal Paradigms",
+  "version": "1.0.0",
+  "contributors": [
+    {
+      "title": "MJ Carroll",
+      "role": "author"
+    }
+  ],
+  "keywords": [
+    "Ngkolmpu",
+    "paradigms"
+  ],
+  "citation": "Carroll, MJ (2022). Ngkolmpu Verbal Paradigms Paralex dataset. Online.",
+  "resources": [
+    {
+      "name": "paradigms",
+      "title": "Inflected forms",
+      "path": "Ngkolmpu_v_paradigms.csv",
+      "schema": {
+        "name": "paradigms-schema",
+        "fields": [
+          {
+            "name": "form_id",
+            "title": "Form table row identifiers",
+            "description": "These identifiers are specific to form, lexeme, cell triples.",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "lexeme",
+            "title": "Reference to a lexeme identifier",
+            "description": "Lexeme identifiers must be unique to paradigms.",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "rdfType": "http://purl.org/linguistics/gold/LexicalItem"
+          },
+          {
+            "name": "cell",
+            "title": "Reference to a cell identifier",
+            "description": "The set of feature values as would appear in a gloss, separated by dots, eg. prs.ind.1sg or f.pl",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "rdfType": "http://purl.org/linguistics/gold/FeatureStructure"
+          },
+          {
+            "name": "phon_form",
+            "title": "Inflected form (phonemic or phonetic)",
+            "description": "The form, given in phonemic or phonetic notation, with sounds separated by spaces",
+            "rdfType": "http://purl.org/linguistics/gold/phonemicRep",
+            "type": "string",
+            "missingValues": [
+              "#DEF#"
+            ],
+            "constraints": {
+              "pattern": "(ᵐp|ⁿt|ⁿs|ᵑk|p|b|m|w|t|n|s|r|l|k|j|i|ɛ|æ|a|ɔ|u|ɒ)( (ᵐp|ⁿt|ⁿs|ᵑk|p|b|m|w|t|n|s|r|l|k|j|i|ɛ|æ|a|ɔ|u|ɒ))*"
+            }
+          }
+        ],
+        "primaryKey": "form_id",
+        "foreignKeys": [
+          {
+            "fields": "cell",
+            "reference": {
+              "resource": "cells",
+              "fields": "cell_id"
+            }
+          },
+          {
+            "fields": "lexeme",
+            "reference": {
+              "resource": "lexemes",
+              "fields": "lexeme_id"
+            }
+          }
+        ]
+      },
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "cells",
+      "title": "Paradigm cells",
+      "path": "Ngkolmpu_v_cells.csv",
+      "schema": {
+        "name": "cells-schema",
+        "fields": [
+          {
+            "name": "cell_id",
+            "title": "Cell identifier",
+            "description": "The set of feature values as would appear in a gloss, separated by dots, eg. prs.ind.1sg or f.pl",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "unique": true,
+              "pattern": "(nsgact|nsgund|sgact|sgund|ipfv|real|1act|2act|3act|1und|2und|3und|nplu|fut|prs|hod|rct|rmt|pfv|dur|irr|pot|imp|fem|def|plu)(\\.(nsgact|nsgund|sgact|sgund|ipfv|real|1act|2act|3act|1und|2und|3und|nplu|fut|prs|hod|rct|rmt|pfv|dur|irr|pot|imp|fem|def|plu))*"
+            },
+            "rdfType": "http://purl.org/linguistics/gold/FeatureStructure"
+          }
+        ],
+        "primaryKey": "cell_id"
+      },
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "features-values",
+      "title": "Grammatical features values",
+      "path": "Ngkolmpu_v_features.csv",
+      "schema": {
+        "name": "features-values-schema",
+        "fields": [
+          {
+            "name": "value_id",
+            "title": "Grammatical Feature value identifier",
+            "description": "Identifier for the grammatical feature value (as found in the cell)",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "unique": true
+            },
+            "rdfType": "http://purl.org/linguistics/gold/FeatureStructure"
+          },
+          {
+            "name": "value_label",
+            "title": "feature value label",
+            "description": "The full label of the feature value (morpho syntactic property), eg. nominative, past, passive, neuter, first person, etc.",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "rdfType": "http://purl.org/linguistics/gold/MorphosyntacticProperty"
+          },
+          {
+            "name": "feature",
+            "title": "feature",
+            "description": "The name of the dimension of this feature, eg. case, tense, modality, voice, force, gender, evidentiality, person, number, polarity...",
+            "type": "string",
+            "constraints": {
+              "required": true
+            },
+            "rdfType": "http://purl.org/linguistics/gold/MorphosyntacticProperty"
+          },
+          {
+            "name": "POS",
+            "title": "Part of Speech",
+            "description": "The relevant part of speech for this form",
+            "type": "string",
+            "rdfType": "http://purl.org/linguistics/gold/PartOfSpeechProperty"
+          },
+          {
+            "name": "canonical_order",
+            "title": "Sorting order for visual presentation",
+            "description": "The order in which features are canonically presented. Use integers to represent relative order, order is used per-featureF.",
+            "type": "integer"
+          }
+        ],
+        "primaryKey": "value_id"
+      },
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "lexemes",
+      "title": "Lexemes",
+      "path": "Ngkolmpu_v_lexemes.csv",
+      "schema": {
+        "name": "lexemes-schema",
+        "fields": [
+          {
+            "name": "lexeme_id",
+            "title": "Identifier for the lexeme",
+            "description": "Lexeme identifiers. Often, they are identical to lemma. However, they must be unique to paradigms, distinguishing homonyms with different inflection. For example, the animal mouse/mice and the computer peripheric mouse/mouses would both have the lemma 'mouse' but could be identified by the lexeme identifiers mouse_1 and mouse_2.",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "unique": true
+            },
+            "rdfType": "http://purl.org/linguistics/gold/LexicalItem"
+          },
+          {
+            "name": "lemma",
+            "title": "orthographic lemma",
+            "description": "This is the citation form of a lexeme. In case of homonymy, it is sometimes repeated between lexemes.",
+            "type": "string"
+          },
+          {
+            "name": "inflectional_class",
+            "type": "any"
+          },
+          {
+            "name": "POS",
+            "title": "Part of Speech",
+            "description": "The relevant part of speech for this form",
+            "type": "string",
+            "rdfType": "http://purl.org/linguistics/gold/PartOfSpeechProperty"
+          },
+          {
+            "name": "meaning",
+            "title": "Definition for this lexeme",
+            "description": "This is a description of the lexeme's overall meaning.",
+            "type": "string"
+          }
+        ],
+        "primaryKey": "lexeme_id",
+        "foreignKey": [
+          {
+            "fields": "tags",
+            "reference": {
+              "resource": "tags",
+              "fields": "tag_id"
+            }
+          }
+        ]
+      },
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "sounds",
+      "title": "Sound inventory with distinctive features",
+      "path": "Ngkolmpu_v_sounds.csv",
+      "schema": {
+        "name": "sounds-schema",
+        "missingValues": [
+          ""
+        ],
+        "fields": [
+          {
+            "name": "sound_id",
+            "title": "sound representation",
+            "rdfType": "http://purl.org/linguistics/gold/FormUnit",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "value",
+            "type": "any"
+          },
+          {
+            "name": "tier",
+            "type": "any"
+          }
+        ],
+        "primaryKey": "sound_id"
+      },
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8"
+    }
+  ]
+}
