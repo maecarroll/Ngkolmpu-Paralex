@@ -1,26 +1,5 @@
 {
-  "id": "",
-  "licenses": [
-    {
-      "name": "GPL-3.0",
-      "title": "GNU General Public License 3.0",
-      "path": "https://opensource.org/licenses/GPL-3.0"
-    }
-  ],
-  "profile": "data-package",
   "title": "Ngkolmpu Verbal Paradigms",
-  "version": "1.0.0",
-  "contributors": [
-    {
-      "title": "MJ Carroll",
-      "role": "author"
-    }
-  ],
-  "keywords": [
-    "Ngkolmpu",
-    "paradigms"
-  ],
-  "citation": "Carroll, MJ (2022). Ngkolmpu Verbal Paradigms Paralex dataset. Online.",
   "resources": [
     {
       "name": "paradigms",
@@ -90,6 +69,42 @@
             }
           }
         ]
+      },
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "sounds",
+      "title": "Sound inventory with distinctive features",
+      "path": "Ngkolmpu_v_sounds.csv",
+      "schema": {
+        "name": "sounds-schema",
+        "missingValues": [
+          ""
+        ],
+        "fields": [
+          {
+            "name": "sound_id",
+            "title": "sound representation",
+            "rdfType": "http://purl.org/linguistics/gold/FormUnit",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "value",
+            "type": "any"
+          },
+          {
+            "name": "tier",
+            "type": "any"
+          }
+        ],
+        "primaryKey": "sound_id"
       },
       "profile": "tabular-data-resource",
       "scheme": "file",
@@ -243,42 +258,27 @@
       "format": "csv",
       "hashing": "md5",
       "encoding": "utf-8"
-    },
+    }
+  ],
+  "licenses": [
     {
-      "name": "sounds",
-      "title": "Sound inventory with distinctive features",
-      "path": "Ngkolmpu_v_sounds.csv",
-      "schema": {
-        "name": "sounds-schema",
-        "missingValues": [
-          ""
-        ],
-        "fields": [
-          {
-            "name": "sound_id",
-            "title": "sound representation",
-            "rdfType": "http://purl.org/linguistics/gold/FormUnit",
-            "constraints": {
-              "required": true,
-              "unique": true
-            }
-          },
-          {
-            "name": "value",
-            "type": "any"
-          },
-          {
-            "name": "tier",
-            "type": "any"
-          }
-        ],
-        "primaryKey": "sound_id"
-      },
-      "profile": "tabular-data-resource",
-      "scheme": "file",
-      "format": "csv",
-      "hashing": "md5",
-      "encoding": "utf-8"
+      "name": "GPL-3.0",
+      "title": "GNU General Public License 3.0",
+      "path": "https://opensource.org/licenses/GPL-3.0"
+    }
+  ],
+  "profile": "data-package",
+  "keywords": [
+    "Ngkolmpu",
+    "paradigms"
+  ],
+  "citation": "Carroll, MJ (2022). Ngkolmpu Verbal Paradigms Paralex dataset. Online.",
+  "version": "1.0.0",
+  "id": "",
+  "contributors": [
+    {
+      "title": "MJ Carroll",
+      "role": "author"
     }
   ]
 }
