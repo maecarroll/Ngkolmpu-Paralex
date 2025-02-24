@@ -7,7 +7,7 @@ languages_iso639:
 files:
   forms:
     path: "Ngkolmpu_v_forms.csv"
-  feature-values:
+  features-values:
     path: "Ngkolmpu_v_features.csv"
   cells:
     path: "Ngkolmpu_v_cells.csv"
