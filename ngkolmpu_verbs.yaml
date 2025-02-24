@@ -1,0 +1,18 @@
+title: Ngkolmpu Verbal Paradigms
+version: '1.2'
+contributors:
+  - title: 'Mae Carroll'
+languages_iso639: 
+  - kcd
+files:
+  forms:
+    path: "Ngkolmpu_v_forms.csv"
+  feature-values:
+    path: "Ngkolmpu_v_features.csv"
+  cells:
+    path: "Ngkolmpu_v_cells.csv"
+  lexemes:
+    path: "Ngkolmpu_v_lexemes.csv"
+  sounds:
+    path: "Ngkolmpu_v_sounds.csv"
+name: ngkolmpu
