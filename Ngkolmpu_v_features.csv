@@ -1,27 +1,27 @@
 value_id,value_label,feature,POS,canonical_order
-fut,future,tense,v,1
-prs,present,tense,v,2
-hod,hodiernal past,tense,v,3
-rct,recent past,tense,v,4
-rmt,remote past,tense,v,5
-pfv,perfective,aspect,v,1
-dur,durative,aspect,v,2
-ipfv,imperfective,aspect,v,3
-irr,irrealis,mood,v,2
-pot,potential,mood,v,4
-imp,imperative,mood,v,3
-real,realis,mood,v,1
-1act,first,actor person,v,1
-2act,second,actor person,v,2
-3act,third,actor person,v,3
-sgact,singular,actor number,v,1
-nsgact,non-singular,actor number,v,2
-1und,first,undergoer person,v,1
-2und,second,undergoer person,v,2
-3und,third,undergoer person,v,3
-sgund,singular,undergoer number,v,1
-nsgund,non-singular,undergoer number,v,2
-fem,feminine,gender,v,2
-def,defualt,gender,v,1
-plu,pluractional,pluractionality,v,2
-nplu,non-pluractional,pluractionality,v,1
+fut,future,tense,verb,1
+prs,present,tense,verb,2
+hod,hodiernal past,tense,verb,3
+rct,recent past,tense,verb,4
+rmt,remote past,tense,verb,5
+pfv,perfective,aspect,verb,1
+dur,durative,aspect,verb,2
+ipfv,imperfective,aspect,verb,3
+irr,irrealis,mood,verb,2
+pot,potential,mood,verb,4
+imp,imperative,mood,verb,3
+real,realis,mood,verb,1
+1act,first,actor person,verb,1
+2act,second,actor person,verb,2
+3act,third,actor person,verb,3
+sgact,singular,actor number,verb,1
+nsgact,non-singular,actor number,verb,2
+1und,first,undergoer person,verb,1
+2und,second,undergoer person,verb,2
+3und,third,undergoer person,verb,3
+sgund,singular,undergoer number,verb,1
+nsgund,non-singular,undergoer number,verb,2
+fem,feminine,gender,verb,2
+def,defualt,gender,verb,1
+plu,pluractional,pluractionality,verb,2
+nplu,non-pluractional,pluractionality,verb,1
