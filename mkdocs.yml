@@ -11,15 +11,15 @@ plugins:
   - paralex:
       paralex_package_path: "ngkolmpu.package.json"
       layout_tables:
+        - tense
+        - aspect
         - mood
       layout_rows:
         - undergoer person
         - undergoer number
-        - actor person
-        - actor number
         - gender
       layout_columns:
-        - aspect
-        - tense
+        - actor person
+        - actor number
         - pluractionality
 repo_url: https://github.com/maecarroll/Ngkolmpu-Paralex
