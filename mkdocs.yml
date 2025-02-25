@@ -13,9 +13,11 @@ plugins:
       layout_tables:
         - mood
       layout_rows:
-        -  person
-        -  number
-        -  gender
+        - undergoer person
+        - undergoer number
+        - actor person
+        - actor number
+        - gender
       layout_columns:
         - aspect
         - tense
