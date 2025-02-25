@@ -9,7 +9,7 @@ theme:
     - navigation.tabs.sticky
 plugins:
   - paralex:
-      paralex_package_path: "ngkolmpu_verbs.package.json"
+      paralex_package_path: "ngkolmpu.package.json"
       layout_tables:
         - mood
       layout_rows:
