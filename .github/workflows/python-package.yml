@@ -10,8 +10,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  validate:
+    name: Validation
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -33,3 +33,16 @@ jobs:
         frictionless validate *.package.json
         paralex validate *.package.json
 
+  build:
+    name: Deploy site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+      - uses: actions/checkout@v3
+
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONFIG_FILE: mkdocs.yml
+          EXTRA_PACKAGES: build-base
