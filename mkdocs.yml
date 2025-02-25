@@ -1,0 +1,23 @@
+site_name: "Ngkolmpu verbal paradigms"
+docs_dir: docs
+theme:
+  palette:
+    primary: red
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+plugins:
+  - paralex:
+      paralex_package_path: "ngkolmpu_verbs.package.json"
+      layout_tables:
+        - mood
+      layout_rows:
+        -  person
+        -  number
+        -  gender
+      layout_columns:
+        - aspect
+        - tense
+        - pluractionality
+repo_url: https://github.com/maecarroll/Ngkolmpu-Paralex
